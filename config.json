@@ -2,12 +2,12 @@
   "db": {
     "host": "localhost",
     "port": "27017",
-    "name": "portfolio",
+    "name": "test",
     "user": "",
     "password": ""
   },
   "http": {
-    "port": 3000,
+    "port": 3001,
     "host": "localhost",
     "publicRoot": "public"
   },
