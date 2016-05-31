@@ -1,0 +1,45 @@
+include _common/_mixins
+
+doctype html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+html
+    head
+        meta(http-equiv = 'Content-Type', content = 'text/html; charset=utf-8')
+        meta(http-equiv='X-UA-Compatible', content="IE=edge,chrome=1")
+        title
+            block title
+
+        meta(name='viewport' content='width=device-width')
+
+        link(rel='stylesheet' type='text/css' href='/css/plugins.admin.min.css' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='/css/main.css' media='screen, projection, print')
+
+    body
+        <!--[if lt IE 8]>
+        <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http://browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p>
+        <![endif]-->
+
+        .wrapper.wrapper_admin
+            section.admin
+                .admin__header
+                    .admin__header-left
+                        .admin__header-title Панель администрирования
+                    .admin__header-right
+                        a(href="#").admin__header-link Вернуться на сайт
+                .tabs
+                    .tabs__controls
+                        - var items = ['Tab 1', 'Tab 2', 'Tab 3']
+                        ul.tabs__list
+                            each item in items
+                                li.tabs__item
+                                    a(href="#").tabs__link= item
+                    .tabs__content
+                        block content
+
+        script(src='/js/plugins.admin.min.js')
+        script(src='/js/main.min.js')
+
+

@@ -1,0 +1,23 @@
+extends ../admin
+
+block title
+	| Админка - таб 2 (admin.psd)
+
+block content
+	.tabs__content-title
+		| Страница "Блог"
+	form(method="post" action="/admin/blog.html").tabs__form
+		.tabs__form-content
+			.tabs__subtitle Добавить запись
+			.tabs__form-add
+				.tabs__form-row
+					input.tabs__input(name="itemName" type="text" placeholder="Название" value=itemName)
+				.tabs__form-row
+					input.tabs__input(name="itemDate" type="text" placeholder="Дата" value=itemDate)
+				.tabs__form-row
+					textarea(name="itemBody" placeholder="Введите текст").tabs__input.tabs__input_textarea
+						=itemBody
+		.tabs__form-message-container= message
+		.tabs__form-error-container= error
+		.tabs__form-submit-container
+			input(name="" type="submit" value="Добавить").tabs__form-submit#tabs__form-submit

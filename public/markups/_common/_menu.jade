@@ -1,0 +1,6 @@
+.screen-menu
+    .screen-menu__container
+        each href, title in links
+            .screen-menu__row
+                a(href="#{href}").screen-menu__link
+                    .subtitle= title

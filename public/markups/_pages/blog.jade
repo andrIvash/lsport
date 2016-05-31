@@ -1,0 +1,28 @@
+extends ../main
+
+block title
+	| Блог (blog.psd)
+
+block content
+	section.section.blog
+		.blog__triangles
+			+section-triangles('blog')
+		.blog-wrapper
+			.container
+				aside.sidebar
+					.menu
+						ul.menu__list
+							- for (var i = 0; i < items.length; i++)
+								li.menu__item(class="#{(i == 0) ? 'active' : ''}")
+									a(href="#item_#{items[i]._id}").menu__link= items[i].title
+					a(href="#").sidebar__trigger
+				main.blog-content
+					ul.articles
+						- for (var i = 0; i < items.length; i++)
+							li(id="item_#{items[i]._id}").article__item
+								.article__title= items[i].title
+								.article__date= items[i].date
+								.article__text= items[i].body
+	- var footerModifer = 'footer_blog';
+
+

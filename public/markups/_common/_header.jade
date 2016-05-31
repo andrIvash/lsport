@@ -1,0 +1,37 @@
+header.header
+    .header__bg
+    .header__content
+        .header__links
+            .header__links-left
+                ul.socials.socials_header
+                    li.socials__item
+                        a(href="https://vk.com/loftschoolru" target="_blank").socials__link
+                            i.fa.fa-vk
+                    li.socials__item
+                        a(href="https://github.com/loftschoolru" target="_blank").socials__link
+                            i.fa.fa-github-alt
+                    li.socials__item
+                        a(href="https://www.linkedin.com/company/loftschool" target="_blank").socials__link
+                            i.fa.fa-linkedin
+            .header__links-right
+                a(href="#").hamburger
+                    svg#hamburger(height='64', version='1.1', width='64', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 64 64')
+                        g
+                            path(fill='none', stroke='#fff', stroke-width='5', stroke-linejoin='bevel', d='M5.0916789,20.818994C5.0916789,20.818994,58.908321,20.818994,58.908321,20.818994')
+                                animate.hamburger__first(attributename='d', from='', to='', dur='.3s', fill='freeze')
+                            path(fill='none', stroke='#fff', stroke-width='5', stroke-linejoin='bevel', d='m 5.1969746,31.909063 53.8166424,0')
+                                animate.hamburger__second(attributename='opacity', from='', to='', dur='.3s', fill='freeze')
+                            path(fill='none', stroke='#fff', stroke-width='5', stroke-linejoin='bevel', d='M5.0916788,42.95698C5.0916788,42.95698,58.908321,42.95698,58.908321,42.95698')
+                                animate.hamburger__third(attributename='d', from='', to='', dur='.3s', fill='freeze')
+        section.user-info
+            .user-info__container
+                .user-info__undertext
+                    img(src="/img/decor/portfolio-text.png" alt="").user-info__portfolio-pic
+                .user-info__inner
+                    .user
+                        .user__pic(style="background-image: url('/img/content/user.jpg')")
+                        .user__name Владимир Астахов
+                        .user__occupation
+                            | Личный сайт веб-разработчика
+        a(href="#").header__down-btn
+

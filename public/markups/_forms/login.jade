@@ -1,0 +1,33 @@
+.auth__block-infos
+    .login
+        .login__title
+            .subtitle Авторизуйтесь
+        form.login__form
+            label.login__elem
+                .login__elem-icon
+                    i.fa.fa-user.login__elem-fa
+                input(name="login" type="text" placeholder="Логин").login__elem-input
+            label.login__elem
+                .login__elem-icon
+                    i.fa.fa-key.login__elem-fa
+                input(name="password" type="text" placeholder="Пароль").login__elem-input
+            .errors__output#errors
+            label.login__human
+                input(name="" id="human" type="checkbox").login__human-input
+                .login__human-checkbox
+                .login__human-text Я человек
+            .login__human-repeat
+                .login__human-repeat-title
+                    | Вы точно не робот?
+                .login__human-repeat-radios
+                        label.login__human-radio
+                            input(name="human" id="yes" type="radio").login__human-radio-elem
+                            .login__human-radio-fake
+                            .login__human-radio-text Да
+                        label.login__human-radio
+                            input(name="human" type="radio").login__human-radio-elem
+                            .login__human-radio-fake
+                            .login__human-radio-text Не уверен
+.auth__block-btns.auth__block-btns_equals
+    a(href="works.html").auth__block-btn На главную
+    a(href="about.html").auth__block-btn#enter-btn Войти

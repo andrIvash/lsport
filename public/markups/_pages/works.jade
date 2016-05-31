@@ -1,0 +1,84 @@
+extends ../main
+
+block title
+    | Работы (works.psd)
+
+block content
+    section.section.works
+        +section-triangles('works')
+        .works__title
+            +section-title('Мои работы', '/img/titles/work.png')
+        .works__content
+            .works__left
+                .works-slider__content
+                    .works-slider__content-wrapper
+                        .works-slider__display
+                            img(src="" alt="").works-slider__display-pic
+                        .works-slider__item-about
+                            .works__subtitle
+                                .subtitle
+                            .works__content-desc
+                            .works__content-btn
+                                a(href="#").works__content-view
+                                    | <i class="fa works__content-view-icon fa-link"></i> Посмотреть сайт
+            .works__right
+                .works-slider
+                    .works-slider__controls
+                        a(href="#").works-slider__control-btn.works-slider__control-btn_left
+                            ul.works-slider__control-list
+                                - for(var i = 0; i < items.length; i++)
+                                    li.works-slider__control-item(
+                                        data-full="#{items[i].pictures[0]}"
+                                        data-title="#{items[i].name}"
+                                        data-skills="#{items[i].tech}"
+                                        data-link="#{items[i].link}"
+                                    )
+                                        img(src="#{items[i].pictures[0]}").works-slider___control-img
+                        a(href="#").works-slider__control-btn.works-slider__control-btn_right
+    section.reviews.section
+        .reviews__container
+            .reviews__title
+                +section-title('Что обо мне говорят', '/img/titles/about.png')
+
+            -
+                var teachers = {
+                    "Дмитрий Ковальчук" : {
+                        "occ" : "основатель Loftschool",
+                        "photo" : "/img/content/dima.jpg",
+                        "text" : "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+                    },
+                    "Зар Захаров" : {
+                        "occ" : "главный преподаватель",
+                        "photo" : "/img/content/zar.jpg",
+                        "text" : "Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!"
+                    }
+                }
+            ul.reviews__list
+                each info, name in teachers
+                    li.reviews__item
+                        .reviews__item-inner
+                            .reviews__item-text
+                                p= info['text']
+                            .reviews__user
+                                .reviews__user-pic(style="background-image: url('#{info['photo']}')")
+                                .reviews__user-name
+                                    .reviews__name-title= name
+                                    .reviews__name-occupation= info['occ']
+            .reviews__form-container
+                .reviews__form
+                    form.reviews__form-elem
+                        .reviews__form-inner
+                            .review__form-blur
+                            .reviews__form-content
+                                .reviews__form-title
+                                    .subtitle Связаться со мной
+                                input(name="name" type="text" placeholder="Имя").reviews__form-input
+                                input(name="email" type="text" placeholder="E-mail").reviews__form-input
+                                textarea(placeholder="Ваше сообщение" name="text").reviews__form-input.reviews__form-input_textarea
+                            #errors
+                        .reviews__form-btns
+                            input(name="" type="submit" value="Отправить").reviews__form-btn.reviews__form-btn_send
+                            input(name="" type="reset" value="Очистить").reviews__form-btn.reviews__form-btn_reset
+                    .form__env
+                        .form__env-icon
+                            include ../../img/icons/env.svg

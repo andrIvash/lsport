@@ -1,0 +1,25 @@
+{
+  "name": "ls-complex-web-dz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "add-user": "node ./addUser.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "connect-mongo": "^1.2.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "jade": "^1.11.0",
+    "mongo-connect": "0.0.6",
+    "mongoose": "^4.4.15",
+    "morgan": "^1.7.0",
+    "multiparty": "^4.1.2",
+    "nodemailer": "^2.4.1"
+  }
+}

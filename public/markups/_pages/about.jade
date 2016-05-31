@@ -1,0 +1,67 @@
+extends ../main
+
+block title
+    | Главная страница (about.psd)
+
+block content
+    section.section.about
+        .about__triangles
+            +section-triangles('about')
+        .about__left
+            .about__col-inner
+                .about__title
+                    +section-title('Обо мне', '/img/titles/about.png')
+                .about__content
+                    .about__user
+                        .about__user-pic
+                            img(src="/img/content/user.jpg" alt="").about__user-img
+                        .about__content-title
+                            .subtitle
+                                | Кто Я
+                        .about__desc.section-text
+                            p.
+                                Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p.
+                                Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+        .about__right
+            .about__col-inner
+                .about__me-title
+                    .subtitle
+                        | Чем я могу быть вам полезен
+                .about__me-text.section-text
+                    p.
+                        Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                .skills
+
+                    - each section in tech
+                        .skills__row
+                            .skills__title= section.name
+                            ul.skills__list
+                            - for(var item in section.items)
+                                li.skills__item
+                                    .skills__circles(data-percents="#{form[section.id][item]}")
+                                        svg.skills__circles-elem(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+                                            circle(cx='50' cy='50' r='40').skills__circles-under
+                                            circle(cx='50' cy='50' r='40' transform="rotate(-90 50,50)").skills__circles-above
+                                        .skills__circles-text
+                                            .skills__circles-title= section.items[item]
+
+    section.section.map
+        #google-map
+        .contacts
+            .subtitle Контакты
+            ul.contacts__list
+
+                -
+                    var contacts = {
+                    "skype" : "skype_kdn",
+                    "envelope" : "shatalov@gmail.com",
+                    "phone" : "+7 931 200 34 24"
+                    }
+
+                each value, key in contacts
+                    li.contacts__item
+                        a(href="#").contacts__link
+                            .contacts__icon
+                                i.fa(class="fa-#{key}")
+                            .contacts__text= value

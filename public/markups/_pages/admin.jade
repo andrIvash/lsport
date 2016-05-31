@@ -1,0 +1,27 @@
+extends ../admin
+
+block title
+    | Админка - таб 1 (admin.psd)
+
+block content
+    .tabs__content-title
+        | Страница "Обо мне"
+    form(action="/admin/about.html" method="post").tabs__form
+        .tabs__form-content
+            ul.admin-skills
+                - each section in tech
+                    li.admin-skills__item
+                        .admin-skills__title= section.name
+                            table.admin-skills__table
+                                - for(var item in section.items)
+                                    tr
+                                        td
+                                            .admin-skills__item-title= section.items[item]
+                                        td.admin-skills__second-row
+                                            .admin-skills__amount
+                                                input(name="#{section.id}->#{item}" type="text" placeholder="" value=form && form[section.id] && form[section.id][item]).tabs__input.tabs__input_short
+                                            .admin-skills__amount-char %
+        .tabs__form-message-container= message
+        .tabs__form-error-container= error
+        .tabs__form-submit-container
+            input(name="" type="submit" value="Сохранить").tabs__form-submit

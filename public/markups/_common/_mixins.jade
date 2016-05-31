@@ -1,0 +1,30 @@
+mixin section-title(title, path)
+    .beauty-title(style="background-image: url('#{path}')")
+        .beauty-title_text= title
+
+mixin section-triangles(sectionName)
+    .section-triangle(class="#{sectionName}-triangle__left")
+        svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 1000 160', preserveaspectratio='none')
+            polygon(points='0,0  0,160  1000,160')
+    .section-triangle(class="#{sectionName}-triangle__right")
+        svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 1000 160', preserveaspectratio='none')
+            polygon(points='0,160  1000,160  1000,0')
+
+mixin svg-icon (icon)
+    if icon == 'git'
+        include ../../img/icons/svg/git.svg
+
+    if icon == 'in'
+        include ../../img/icons/svg/in.svg
+
+    if icon == 'vk'
+        include ../../img/icons/svg/vk.svg
+
+// global content
+-
+    var links = {
+        "Мои работы" : "/works.html",
+        "Обо мне" : "/about.html",
+        "Блог" : "/blog.html",
+        "Авторизация" : "/"
+    };

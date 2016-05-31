@@ -1,0 +1,29 @@
+extends ../admin
+
+block title
+    | Админка - таб 2 (admin.psd)
+
+block content
+    .tabs__content-title
+        | Страница "Мои работы"
+    form(method="post" action="/admin/works.html" enctype="multipart/form-data").tabs__form
+        .tabs__form-content
+            .tabs__subtitle Добавить запись
+            .tabs__form-add
+                .tabs__form-row
+                    input.tabs__input(name="workName" type="text" placeholder="Название проекта" value=workName)
+                .tabs__form-row
+                    input.tabs__input(name="workTech" type="text" placeholder="Технологии" value=workTech)
+                .tabs__form-row
+                    input.tabs__input(name="workLink" type="text" placeholder="Ссылка" value=workLink)
+                .tabs__form-row
+                    label.file-input
+                        .file-input__fake
+                            .file-input__icon
+                                img(src="/img/icons/file-upload.png" alt="")
+                            .file-input__text Загрузить картинку
+                        input.tabs__input(name="workPicture" type="file")
+        .tabs__form-message-container= message
+        .tabs__form-error-container= error
+        .tabs__form-submit-container
+            input(name="" type="submit" value="Добавить").tabs__form-submit

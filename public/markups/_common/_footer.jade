@@ -1,0 +1,27 @@
+footer.footer(class="#{footerModifer ? footerModifer : ''}")
+    .footer__top
+        .container
+            .footer__nav
+                ul.footer__nav-links
+                    each value, key in links
+                        li.footer__nav-item
+                            a(href="#{value}").footer__nav-link= key
+            .footer__socials
+                ul.footer__socials-list
+                    -
+                        var socials = {
+                            "vk" : "https://vk.com/loftschoolru",
+                            "in" : "https://www.linkedin.com/company/loftschool",
+                            "git" : "https://github.com/loftschoolru"
+                        }
+
+                    each link, icon in socials
+                        li.footer__socials-item
+                            a(href="#{link}" target="_blank").footer__socials-icon
+                                +svg-icon(icon)
+    .footer__bottom
+        .container
+            .footer__copyright-col
+                | Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+            .footer__copyright-col.footer__copyright-col_right
+                | © Владимир Астахов | создано с любовью в LoftSchool | 2016

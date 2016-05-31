@@ -1,0 +1,18 @@
+extends ../auth
+
+block title
+	| Приветствие (login.psd)
+
+block content
+	.mountains
+		ul.mauntains__parallax
+			- for (var i = 1; i <= 6; i++)
+				li.mountains__layer(class="layer mountains__layer_#{i}" data-depth="0.#{i}")
+					img(src="/img/bg/parallax/#{i + 1}.png" alt="").mountains__layer-pic
+	.auth
+		.auth__block
+			.auth__block-flip
+				.auth__block-side.auth__block-front
+					include ../_forms/welcome
+				.auth__block-side.auth__block-back
+					include ../_forms/login

@@ -1,0 +1,31 @@
+.reviews__form {
+  overflow: hidden;
+  position: relative; }
+  .reviews__form.active .form__env {
+    transform: translateX(0); }
+  .reviews__form.active .reviews__form-elem {
+    transform: translateX(100%); }
+
+.reviews__form-elem {
+  transition: .6s; }
+
+.form__env {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: .6s; }
+
+.form__env-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px; }
+  .form__env-icon svg {
+    fill: #455a64; }
+
+/*# sourceMappingURL=addition.css.map */
