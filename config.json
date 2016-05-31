@@ -1,6 +1,6 @@
 {
   "db": {
-    "host": "localhost",
+    "host": "188.225.36.182",
     "port": "27017",
     "name": "test",
     "user": "",
