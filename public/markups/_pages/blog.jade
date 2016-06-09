@@ -22,7 +22,7 @@ block content
 							li(id="item_#{items[i]._id}").article__item
 								.article__title= items[i].title
 								.article__date= items[i].date
-								.article__text #{items[i].body}
+								.article__text !{items[i].body}
 	- var footerModifer = 'footer_blog';
 
 
