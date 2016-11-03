@@ -1,6 +1,6 @@
 {
   "db": {
-    "host": "188.225.36.182",
+    "host": "92.53.104.93",
     "port": "27017",
     "name": "test",
     "user": "",
@@ -8,7 +8,7 @@
   },
   "http": {
     "port": 3001,
-    "host": "188.225.36.182",
+    "host": "92.53.104.93",
     "publicRoot": "public"
   },
   "mail": {
@@ -18,7 +18,7 @@
       "port": 465,
       "secure": true,
       "auth": {
-        "user": "testico.factory@gmail.com",
+        "user": "testuser.loft@gmail.com",
         "pass": "loftschool12345"
       }
     }

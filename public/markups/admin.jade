@@ -28,14 +28,14 @@ html
                     .admin__header-left
                         .admin__header-title Панель администрирования
                     .admin__header-right
-                        a(href="#").admin__header-link Вернуться на сайт
+                        a(href="/").admin__header-link Вернуться на сайт
                 .tabs
                     .tabs__controls
-                        - var items = ['Tab 1', 'Tab 2', 'Tab 3']
+                        - var items = [['Tab 1', '/admin/about.html'], ['Tab 2', '/admin/works.html'], ['Tab 3', '/admin/blog.html']]
                         ul.tabs__list
                             each item in items
                                 li.tabs__item
-                                    a(href="#").tabs__link= item
+                                    a(href= item[1]).tabs__link= item[0]
                     .tabs__content
                         block content
 
